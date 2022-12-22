@@ -19,19 +19,8 @@ const imgMarkup = galleryItems.map(
 
     galleryImgRef.insertAdjacentHTML("beforeend", imgMarkup);
 
-const lightbox = new SimpleLightbox('.gallery a', {
-    scrollZoom: false,
-    nav: true,
-    caption: true,
+const lightBox = new SimpleLightbox('.gallery a', {          
     captionDelay: 250,    	  
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    // doubleTapZoom: 1,
+    captionsData: 'alt',        
   });
 
-  // galleryImgRef.addEventListener('click', event => {
-  //   event.preventDefault();
-  //   if (!event.target.classList.contains('gallery__image')) {
-  //     return;
-  //   }
-  // });
