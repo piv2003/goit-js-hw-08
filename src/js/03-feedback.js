@@ -1,7 +1,8 @@
 import throttle from 'lodash.throttle';
+//the main key for saving data to "local storage"
 const STORAGE_KEY = 'feedback-form-state';
-
-const formData = {};//all input data in two fields
+//all input data in two fields
+const formData = {};
 
 //getting refers for placing listeners and controlling input by fields
 const refs = {
@@ -30,8 +31,8 @@ function setFormData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-//output to the console contents of the fields upon submission. 
-//clearing fields and "local storage".
+//output to the console contents of the fields upon submission 
+//clearing forms fields and "local storage"
 function onFormSubmit(e) {
   e.preventDefault();
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
