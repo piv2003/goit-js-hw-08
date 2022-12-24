@@ -32,11 +32,10 @@ function setFormData() {
 }
 
 //output to the console contents of the fields upon submission 
-//clearing forms fields and "local storage"
+//clearing form fields and "local storage"
 function onFormSubmit(e) {
   e.preventDefault();
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   refs.form.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
-
