@@ -11,7 +11,7 @@ const refs = {
   textInput: document.querySelector('.feedback-form textarea'),
 };
 
-//placement of listeners &  control of access to the "local storage" no more than 500ms 
+//placement of listeners &  control of access to the "local storage" no more than 500ms
 refs.form.addEventListener('input', throttle(setFormData, 500));
 refs.form.addEventListener('submit', onFormSubmit);
 
@@ -31,10 +31,14 @@ function setFormData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-//output to the console contents of the fields upon submission 
+//output to the console contents of the fields upon submission
 //clearing form fields and "local storage"
 function onFormSubmit(e) {
   e.preventDefault();
+  if (refs.emailInput.value === '' || refs.textInput.value === '') {
+    alert('Please fill in all fields of the form!');
+    return;
+  }
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   refs.form.reset();
   localStorage.removeItem(STORAGE_KEY);

@@ -15,4 +15,4 @@ function onPlay(data) {
 }
 
 //Retrieving from "localStorage" the last saved time and setting it to "player"
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0);
