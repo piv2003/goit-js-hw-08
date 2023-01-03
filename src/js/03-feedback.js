@@ -43,3 +43,4 @@ function onFormSubmit(e) {
   refs.form.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
+
